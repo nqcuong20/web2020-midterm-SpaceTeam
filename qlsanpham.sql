@@ -2,10 +2,17 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD:qlsp.sql
 -- Host: 127.0.0.1
 -- Generation Time: Jul 04, 2020 at 04:55 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.29
+=======
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th7 04, 2020 lúc 06:29 AM
+-- Phiên bản máy phục vụ: 10.4.11-MariaDB
+-- Phiên bản PHP: 7.4.4
+>>>>>>> 41913a87c29eb7f50679dc3f807aa730acd5404e:qlsanpham.sql
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,7 +60,19 @@ CREATE TABLE `hanghoa` (
 --
 
 INSERT INTO `hanghoa` (`mahh`, `tenhh`, `dongia`, `hinh`, `loai`) VALUES
+<<<<<<< HEAD:qlsp.sql
 (1, 'Nokia 6.1 Plus', 4000, '1.jpg', 2);
+=======
+(1, 'SAMSUNG GALAXY S20+', 19999000, 'SSGALAXYS20+19TR.png', 3),
+(2, 'SAMSUNG GALAXY FLOD', 50000000, 'SSGALAXYFOLD50TR.png', 3),
+(3, 'SAMSUNG GALAXY  20 ULEA', 2000000, 'SSGALAXYS20ULREA20TR.png', 3),
+(4, 'IPHONE  SE 256 GB', 17000000, 'IPHONESE256GB17TR.png', 1),
+(5, 'IPHONE 11 PRO MAX 512 GB', 35000000, 'IPHONE11PROMAX512GB39TR.png', 1),
+(6, 'OPPO A9 ', 6000000, 'OPPOA06TR.png', 5),
+(7, 'OPPO FIND X2', 20000000, 'OPPOFINDX220TR.png', 5),
+(8, 'VIVO S1 PRO', 5999000, 'VIVOS1PRO6TR.png', 4),
+(9, 'VIVO V19', 9999000, 'VIVOV199TR.png', 4);
+>>>>>>> 41913a87c29eb7f50679dc3f807aa730acd5404e:qlsanpham.sql
 
 -- --------------------------------------------------------
 
@@ -73,7 +92,15 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`mahd`, `ngaylaphd`, `makh`, `tongtien`) VALUES
+<<<<<<< HEAD:qlsp.sql
 (1, '0000-00-00', 2, 20000);
+=======
+(1, '0000-00-00', 2, 20000),
+(2, '2020-07-15', 4, 30000000),
+(3, '2020-07-08', 1, 10000000),
+(4, '2020-07-01', 2, 2000000),
+(5, '2020-07-29', 4, 7999000);
+>>>>>>> 41913a87c29eb7f50679dc3f807aa730acd5404e:qlsanpham.sql
 
 -- --------------------------------------------------------
 
@@ -112,7 +139,15 @@ CREATE TABLE `loai` (
 --
 
 INSERT INTO `loai` (`maloai`, `tenloai`, `mota`) VALUES
+<<<<<<< HEAD:qlsp.sql
 
+=======
+(1, 'Iphone', 'iphone giá rẻ'),
+(2, 'Nokia', 'Điện Thoại Đẹp'),
+(3, 'SAMSUNG', 'Điện Thoại Xinh'),
+(4, 'VIVO', 'VIVO VIRA'),
+(5, 'OPPO', 'Điện thoại siêu đẹp');
+>>>>>>> 41913a87c29eb7f50679dc3f807aa730acd5404e:qlsanpham.sql
 
 --
 -- Indexes for dumped tables
@@ -159,13 +194,21 @@ ALTER TABLE `loai`
 -- AUTO_INCREMENT for table `hanghoa`
 --
 ALTER TABLE `hanghoa`
+<<<<<<< HEAD:qlsp.sql
   MODIFY `mahh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+=======
+  MODIFY `mahh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+>>>>>>> 41913a87c29eb7f50679dc3f807aa730acd5404e:qlsanpham.sql
 
 --
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
+<<<<<<< HEAD:qlsp.sql
   MODIFY `mahd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+=======
+  MODIFY `mahd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+>>>>>>> 41913a87c29eb7f50679dc3f807aa730acd5404e:qlsanpham.sql
 
 --
 -- AUTO_INCREMENT for table `khachhang`
@@ -177,7 +220,7 @@ ALTER TABLE `khachhang`
 -- AUTO_INCREMENT for table `loai`
 --
 ALTER TABLE `loai`
-  MODIFY `maloai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `maloai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
