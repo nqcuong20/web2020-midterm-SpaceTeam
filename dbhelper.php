@@ -6,16 +6,16 @@
     function execute($sql)
     {
         //create connection tới database
-        $conn = mysqli_connect(HOST, USERNAME,PASSWORD,DATABASE);
+        $conn = mysqli_connect(HOST, USERNAME,PASSWORD,DATABASE) or die ("Không kết nối được");
 
 
         // QUERY
-        mysqli_query($conn,$sql);
+        $result=mysqli_query($conn,$sql);
 
         //dòng connection
         mysqli_close($conn);
 
-
+        return $result;
     }
 
 // sử dụng cho lệnh select = > kết quả trả về

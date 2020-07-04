@@ -43,25 +43,26 @@ include_once("dbhelper.php");
                     <tbody>
                       <?php
                     //   ĐỔ DỮ LIỆU
-                    $index = 1;
-                    $sql = 'SELECT mahh,tenhh,dongia,hinh,tenloai FROM hanghoa inner join loai on hanghoa.loai=loai.maloai';
+                    $i = 1;
+                    $sql = 'SELECT mahh,tenhh,dongia,hinh FROM hanghoa' ;
+                    $result = execute($sql);
                     // else ở trên rồi
-                    $studentList = executeResult($sql);
-                    foreach ($studentList as $std){
-                            echo '
-                            <tr>
-                                <td>'.($index++).'</td>
-                                <td>'.$std['mahh'].'</td>
-                                <td>'.$std['tenhh'].'</td>
-                                <td>'.$std['dongia'].'</td>
-                                <td>'.$std['hinh'].'</td>
-                                <td>'.$std['tenloai'].'</td>
-                                <td> <button class="btn btn-warning" onclick=\'window.open("input.php?id='.$std['mahh'].'","_self") \'">Edit</button></td>
-                                
-                                <td><button class="btn btn-danger" onclick="deleteStudent('.$std['mahh'].')">Delete</button></td>
-                            </tr>';
+                    $i=1;
+                    while($row=mysqli_fetch_array($result)){
+                    $gia=number_format($row["dongia"]);
+                    $chuoi=<<<EOD
+                    <tr>
+                    <td>$i</td>
+                    <td>{$row['mahh']}</td>
+                    <td>{$row['tenhh']}</td>
+                    <td>$gia</td>
+                    <td><img src="Dienthoai/{$row['hinh']}" class"hoa"/> </td>
+                    </tr>
+    EOD;
+    echo $chuoi;
+    $i++;
                         }
-                      ?>
+                       ?>
                     </tbody>
                     </div>
                 </div>
