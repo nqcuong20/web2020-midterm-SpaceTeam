@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 04, 2020 lúc 05:31 AM
+-- Thời gian đã tạo: Th7 04, 2020 lúc 06:07 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.4
 
@@ -109,7 +109,8 @@ CREATE TABLE `khachhang` (
 INSERT INTO `khachhang` (`makh`, `hoten`, `dienthoai`, `email`) VALUES
 (1, 'Nguyễn Quốc Cường', 377077630, 'nguyenquoccuongcn20@gmail.com'),
 (2, 'Nguyễn Quốc Duy', 38592350, 'nguyenquocduy@gmail.com'),
-(3, 'Trần Hoài Đức', 37736235, 'tranhoaiduc@gmail.com');
+(3, 'Trần Hoài Đức', 37736235, 'tranhoaiduc@gmail.com'),
+(4, 'Dương Tấn Thiên', 335439282, 'duongtanthien.com.vn@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -189,7 +190,7 @@ ALTER TABLE `hoadon`
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `makh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `makh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `loai`
