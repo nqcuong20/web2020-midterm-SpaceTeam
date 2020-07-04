@@ -1,6 +1,6 @@
 <?php
     define('HOST', 'localhost');
-    define('DATABASE', 'qlsp');
+    define('DATABASE', 'qlsanpham');
     define('USERNAME', 'root');
     define('PASSWORD', '');
 ?>

@@ -17,7 +17,7 @@ include_once("dbhelper.php");
         <div class="container">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        Quản lý thông tin sinh viên
+                        Quản Lý Sản Phẩm
                         <!-- FORM TÌM KIẾM -->
                         <form method="GET">
                             <!-- Thường dùng GET -->
@@ -29,13 +29,11 @@ include_once("dbhelper.php");
 					<thead>
                     <!-- Loại, Hàng Hóa, Khách Hàng, Hóa Đơn, Chi tiết Hóa đơn -->
 						<tr>
-							<th>STT</th>
+							
 							<th>Mã Sản Phẩm</th>
 							<th>Tên Hàng Hóa</th>
 							<th>Đơn Giá</th>
-							<th>Hình</th>
 							<th>Loại</th>
-							
 							<th width="60px"></th>
 							<th width="60px"></th>
 						</tr>
@@ -43,9 +41,9 @@ include_once("dbhelper.php");
                     <tbody>
                       <?php
                     //   ĐỔ DỮ LIỆU
-                    $i = 1;
-                    $sql = 'SELECT mahh,tenhh,dongia,hinh FROM hanghoa' ;
-                    $result = execute($sql);
+                    $index = 1;
+                    $sql = 'SELECT mahh,tenhh,dongia,tenloai,hinh FROM hanghoa inner join loai on hanghoa.loai=loai.maloai ';
+                    $result= execute($sql);
                     // else ở trên rồi
                     $i=1;
                     while($row=mysqli_fetch_array($result)){
@@ -63,8 +61,10 @@ include_once("dbhelper.php");
     EOD;
     echo $chuoi;
     $i++;
+
+
                         }
-                       ?>
+                      ?>
                     </tbody>
                     </div>
                 </div>

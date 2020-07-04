@@ -6,7 +6,7 @@
     function execute($sql)
     {
         //create connection tới database
-        $conn = mysqli_connect(HOST, USERNAME,PASSWORD,DATABASE) or die ("Không kết nối được");
+        $conn = mysqli_connect(HOST, USERNAME,PASSWORD,DATABASE);
 
 
         // QUERY
@@ -14,8 +14,8 @@
 
         //dòng connection
         mysqli_close($conn);
-
         return $result;
+
     }
 
 // sử dụng cho lệnh select = > kết quả trả về
@@ -29,7 +29,6 @@
         while ($row = mysqli_fetch_array($resultset, 1)) {
             $list[] = $row;
         }
-    
         //dong connection
         mysqli_close($conn);
     
