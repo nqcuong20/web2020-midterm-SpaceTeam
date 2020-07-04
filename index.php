@@ -56,7 +56,9 @@ include_once("dbhelper.php");
                     <td>{$row['mahh']}</td>
                     <td>{$row['tenhh']}</td>
                     <td>$gia</td>
-                    <td><img src="Dienthoai/{$row['hinh']}" class"hoa"/> </td>
+                    <td><img src="Dienthoai/{$row['hinh']}"/> </td>
+                    <td> <button class="btn btn-warning" onclick=\'window.open("input.php?id='.{$row['mahh']}.'","_self") \'">Edit</button></td>   
+                    <td><button class="btn btn-danger" onclick="deleteStudent('.{$row['mahh']}.')">Delete</button></td>
                     </tr>
     EOD;
     echo $chuoi;
