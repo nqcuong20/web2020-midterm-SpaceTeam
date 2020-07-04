@@ -17,7 +17,7 @@ include_once("dbhelper.php");
         <div class="container">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        Quản lý thông tin sinh viên
+                        Quản Lý Sản Phẩm
                         <!-- FORM TÌM KIẾM -->
                         <form method="GET">
                             <!-- Thường dùng GET -->
@@ -29,13 +29,11 @@ include_once("dbhelper.php");
 					<thead>
                     <!-- Loại, Hàng Hóa, Khách Hàng, Hóa Đơn, Chi tiết Hóa đơn -->
 						<tr>
-							<th>STT</th>
+							
 							<th>Mã Sản Phẩm</th>
 							<th>Tên Hàng Hóa</th>
 							<th>Đơn Giá</th>
-							<th>Hình</th>
 							<th>Loại</th>
-							
 							<th width="60px"></th>
 							<th width="60px"></th>
 						</tr>
@@ -43,26 +41,23 @@ include_once("dbhelper.php");
                     <tbody>
                       <?php
                     //   ĐỔ DỮ LIỆU
-                    $i = 1;
-                    $sql = 'SELECT mahh,tenhh,dongia,hinh FROM hanghoa' ;
-                    $result = execute($sql);
+                    $index = 1;
+                    $sql = 'SELECT mahh,tenhh,dongia,tenloai FROM hanghoa inner join loai on hanghoa.loai=loai.maloai ';
                     // else ở trên rồi
-                    $i=1;
-                    while($row=mysqli_fetch_array($result)){
-                    $gia=number_format($row["dongia"]);
-                    $chuoi=<<<EOD
-                    <tr>
-                    <td>$i</td>
-                    <td>{$row['mahh']}</td>
-                    <td>{$row['tenhh']}</td>
-                    <td>$gia</td>
-                    <td><img src="Dienthoai/{$row['hinh']}" class"hoa"/> </td>
-                    </tr>
-    EOD;
-    echo $chuoi;
-    $i++;
+                    $List = executeResult($sql);
+                    foreach ($List as $std){
+                            echo '
+                            <tr>
+                                
+                                <td>'.$std['mahh'].'</td>
+                                <td>'.$std['tenhh'].'</td>
+                                <td>'.$std['dongia'].'</td>
+                                <td>'.$std['tenloai'].'</td>
+                                <td> <button class="btn btn-warning" onclick=\'window.open("input.php?id='.$std['mahh'].'","_self") \'">Edit</button></td>
+                                <td><button class="btn btn-danger" onclick="deleteStudent('.$std['mahh'].')">Delete</button></td>
+                            </tr>';
                         }
-                       ?>
+                      ?>
                     </tbody>
                     </div>
                 </div>

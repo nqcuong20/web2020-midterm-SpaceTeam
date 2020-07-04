@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 04, 2020 lúc 06:07 AM
--- Phiên bản máy phục vụ: 10.4.11-MariaDB
--- Phiên bản PHP: 7.4.4
+-- Host: 127.0.0.1
+-- Generation Time: Jul 04, 2020 at 04:55 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `qlsp`
+-- Database: `qlsp`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chitiethoadon`
+-- Table structure for table `chitiethoadon`
 --
 
 CREATE TABLE `chitiethoadon` (
@@ -34,20 +34,10 @@ CREATE TABLE `chitiethoadon` (
   `soluong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Đang đổ dữ liệu cho bảng `chitiethoadon`
---
-
-INSERT INTO `chitiethoadon` (`macthd`, `mahd`, `mahh`, `soluong`) VALUES
-(1, 3, 3, 3),
-(2, 1, 1, 3),
-(3, 1, 1, 2),
-(4, 1, 3, 2);
-
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hanghoa`
+-- Table structure for table `hanghoa`
 --
 
 CREATE TABLE `hanghoa` (
@@ -59,18 +49,16 @@ CREATE TABLE `hanghoa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `hanghoa`
+-- Dumping data for table `hanghoa`
 --
 
 INSERT INTO `hanghoa` (`mahh`, `tenhh`, `dongia`, `hinh`, `loai`) VALUES
-(1, 'SAMSUNG GALAXY S20+', 19999000, 'SSGALAXYS20+19TR.png', 3),
-(2, 'SAMSUNG GALAXY FLOD', 50000000, 'SSGALAXYFOLD50TR.png', 3),
-(3, 'SAMSUNG GALAXY  20 ULEA', 2000000, 'SSGALAXYS20ULREA20TR.png', 3);
+(1, 'Nokia 6.1 Plus', 4000, '1.jpg', 2);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoadon`
+-- Table structure for table `hoadon`
 --
 
 CREATE TABLE `hoadon` (
@@ -81,18 +69,16 @@ CREATE TABLE `hoadon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `hoadon`
+-- Dumping data for table `hoadon`
 --
 
 INSERT INTO `hoadon` (`mahd`, `ngaylaphd`, `makh`, `tongtien`) VALUES
-(1, '0000-00-00', 2, 20000),
-(3, '2020-07-08', 1, 10000000),
-(4, '2020-07-01', 2, 2000000);
+(1, '0000-00-00', 2, 20000);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `khachhang`
+-- Table structure for table `khachhang`
 --
 
 CREATE TABLE `khachhang` (
@@ -103,19 +89,16 @@ CREATE TABLE `khachhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `khachhang`
+-- Dumping data for table `khachhang`
 --
 
 INSERT INTO `khachhang` (`makh`, `hoten`, `dienthoai`, `email`) VALUES
-(1, 'Nguyễn Quốc Cường', 377077630, 'nguyenquoccuongcn20@gmail.com'),
-(2, 'Nguyễn Quốc Duy', 38592350, 'nguyenquocduy@gmail.com'),
-(3, 'Trần Hoài Đức', 37736235, 'tranhoaiduc@gmail.com'),
-(4, 'Dương Tấn Thiên', 335439282, 'duongtanthien.com.vn@gmail.com');
+
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `loai`
+-- Table structure for table `loai`
 --
 
 CREATE TABLE `loai` (
@@ -125,98 +108,96 @@ CREATE TABLE `loai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `loai`
+-- Dumping data for table `loai`
 --
 
 INSERT INTO `loai` (`maloai`, `tenloai`, `mota`) VALUES
-(1, 'Iphone', 'iphone giá rẻ'),
-(2, 'Nokia', 'Điện Thoại Đẹp'),
-(3, 'Sam Sung', 'Điện Thoại Xinh');
+
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `chitiethoadon`
+-- Indexes for table `chitiethoadon`
 --
 ALTER TABLE `chitiethoadon`
   ADD KEY `mahd` (`mahd`,`mahh`),
   ADD KEY `mahh` (`mahh`);
 
 --
--- Chỉ mục cho bảng `hanghoa`
+-- Indexes for table `hanghoa`
 --
 ALTER TABLE `hanghoa`
   ADD PRIMARY KEY (`mahh`),
   ADD KEY `loai` (`loai`);
 
 --
--- Chỉ mục cho bảng `hoadon`
+-- Indexes for table `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD PRIMARY KEY (`mahd`),
   ADD KEY `makh` (`makh`);
 
 --
--- Chỉ mục cho bảng `khachhang`
+-- Indexes for table `khachhang`
 --
 ALTER TABLE `khachhang`
   ADD PRIMARY KEY (`makh`);
 
 --
--- Chỉ mục cho bảng `loai`
+-- Indexes for table `loai`
 --
 ALTER TABLE `loai`
   ADD PRIMARY KEY (`maloai`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `hanghoa`
+-- AUTO_INCREMENT for table `hanghoa`
 --
 ALTER TABLE `hanghoa`
-  MODIFY `mahh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `mahh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `hoadon`
+-- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `mahd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `khachhang`
+-- AUTO_INCREMENT for table `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `makh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `makh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `loai`
+-- AUTO_INCREMENT for table `loai`
 --
 ALTER TABLE `loai`
   MODIFY `maloai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `chitiethoadon`
+-- Constraints for table `chitiethoadon`
 --
 ALTER TABLE `chitiethoadon`
   ADD CONSTRAINT `chitiethoadon_ibfk_1` FOREIGN KEY (`mahd`) REFERENCES `hoadon` (`mahd`),
   ADD CONSTRAINT `chitiethoadon_ibfk_2` FOREIGN KEY (`mahh`) REFERENCES `hanghoa` (`mahh`);
 
 --
--- Các ràng buộc cho bảng `hanghoa`
+-- Constraints for table `hanghoa`
 --
 ALTER TABLE `hanghoa`
   ADD CONSTRAINT `hanghoa_ibfk_1` FOREIGN KEY (`loai`) REFERENCES `loai` (`maloai`);
 
 --
--- Các ràng buộc cho bảng `hoadon`
+-- Constraints for table `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD CONSTRAINT `hoadon_ibfk_1` FOREIGN KEY (`makh`) REFERENCES `khachhang` (`makh`);
